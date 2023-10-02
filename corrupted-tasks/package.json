@@ -1,0 +1,46 @@
+{
+  "name": "corrupted-tasks",
+  "displayName": "corrupted-tasks",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.79.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "corrupted-tasks.helloWorld",
+        "title": "Run tasks.json race"
+      }
+    ],
+    "taskDefinitions": [
+      {
+        "type": "myprovider",
+        "properties": {
+          "myprops": {
+            "type": "object",
+            "properties": {
+              "myprop": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "20.2.5",
+    "typescript": "^5.1.3"
+  }
+}
